@@ -416,7 +416,7 @@ async function uploadFileToS3(env, formdata, fullId, metadata, returnLink, origi
 
         return new Response(JSON.stringify([{ src: returnLink }]), {
             status: 200,
-            headers: { "Content-Type": "application/json" },
+            headers: { "Content-Type": "application/json","Access-Control-Allow-Origin": "*" },
         });
     } catch (error) {
         return new Response(`Error: Failed to upload to S3 - ${error.message}`, { status: 500 });
@@ -514,7 +514,7 @@ async function uploadFileToTelegram(env, formdata, fullId, metadata, fileExt, fi
                 JSON.stringify([{ 'src': `${returnLink}` }]),
                 {
                     status: 200,
-                    headers: { 'Content-Type': 'application/json' }
+                    headers: { 'Content-Type': 'application/json',"Access-Control-Allow-Origin": "*" }
                 }
             );
         }
@@ -571,7 +571,7 @@ async function uploadFileToExternal(env, formdata, fullId, metadata, returnLink,
         JSON.stringify([{ 'src': `${returnLink}` }]), 
         {
             status: 200,
-            headers: { 'Content-Type': 'application/json' }
+            headers: { 'Content-Type': 'application/json',"Access-Control-Allow-Origin": "*" }
         }
     );
 }
