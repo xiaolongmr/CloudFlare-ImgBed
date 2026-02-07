@@ -1,5 +1,8 @@
 .wrangler/*
 data/*
 node_modules
+wrangler.toml
 .DS_Store
-docs/Sanyue-ImgHub
+
+.kiro/
+.vscode/
